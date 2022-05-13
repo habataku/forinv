@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "/index.js","use": "@vercel/node" },
+    { "src": "lib/**","use": "@vercel/static" },
+     { "src": "lib/window/**","use": "@vercel/static" },
+     { "src": "lib/rewrite/**","use": "@vercel/static" },
+     { "src": "lib/main/**","use": "@vercel/static" },
+     { "src": "index.html","use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "/","dest": "/index.html" },
+    { "src": "/.*","dest": "/index.js" }
+  ]
+}
